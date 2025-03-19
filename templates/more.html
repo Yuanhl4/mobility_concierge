@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>More Capability</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=version) }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* 覆盖原有的图标容器样式 */
+        .capability-icon-container {
+            margin: 10px 0;
+            padding: 10px;
+        }
+        
+        /* 减小图标尺寸为原来的一半 */
+        #capability-icon {
+            width: 60px;
+            height: 60px;
+        }
+        
+        /* 减少标题与图标的距离 */
+        .capabilities-title {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container more-page">
+        <div class="header">
+            <a href="/" class="back-button">
+                <div class="back-icon">
+                    <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 19.438L8.95502 20.5L1.28902 12.71C1.10452 12.5197 1.00134 12.2651 1.00134 12C1.00134 11.7349 1.10452 11.4803 1.28902 11.29L8.95502 3.5L10 4.563L2.68202 12L10 19.438Z" fill="black"/>
+                    </svg>
+                </div>
+            </a>
+            <h1 class="page-title">More Capability</h1>
+        </div>
+
+        <div class="chat-container">
+            <!-- 中心图标 -->
+            <div class="capability-icon-container">
+                <img id="capability-icon" src="{{ url_for('static', filename='images/capability-icon.png') }}" alt="Capabilities">
+            </div>
+
+            <!-- 功能标题 -->
+            <div class="capabilities-title">Capabilities</div>
+
+            <!-- 功能按钮 -->
+            <div class="capability-buttons">
+                <button class="capability-button" onclick="setPrompt('I want to explore transportation options and mobility hubs')">
+                    I want to explore transportation options and mobility hubs
+                </button>
+                <button class="capability-button" onclick="setPrompt('I want to plan a trip or find a route')">
+                    I want to plan a trip or find a route
+                </button>
+                <button class="capability-button" onclick="setPrompt('I want to learn about tools and apps for getting around')">
+                    I want to learn about tools and apps for getting around
+                </button>
+            </div>
+
+            <!-- 提示文本 -->
+            <div class="capability-hint">
+                These are just a few examples of what I can do. Ask your question below
+            </div>
+
+            <!-- 按钮组 -->
+            <div class="button-scroll-container">
+                <div class="nav-buttons">
+                    <a href="/personalized" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/personalized-button.png') }}" alt="Personalized">
+                        <span>Personalized Tools</span>
+                    </a>
+                    <a href="/helper" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/travel-helper-button.png') }}" alt="Travel Helper">
+                        <span>Travel Helper</span>
+                    </a>
+                    <a href="/information" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/information-button.png') }}" alt="Information">
+                        <span>Information</span>
+                    </a>
+                    <a href="/more" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/more-button.png') }}" alt="More">
+                        <span>More</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 底部输入框 -->
+            <div class="input-container">
+                <div class="input-box">
+                    <img src="{{ url_for('static', filename='images/search.png') }}" alt="Search" class="input-icon">
+                    <input type="text" id="userInput" placeholder="Message to AI bot">
+                    <img src="{{ url_for('static', filename='images/microphone.png') }}" alt="Microphone" class="input-icon">
+                    <img src="{{ url_for('static', filename='images/send.png') }}" alt="Send" class="input-icon" onclick="sendMessage()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script>
+        // 设置提示文本到输入框
+        function setPrompt(text) {
+            const inputElement = document.getElementById('userInput');
+            inputElement.value = text;
+            inputElement.focus();
+        }
+    </script>
+</body>
+</html> 

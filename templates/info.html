@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- 顶部导航栏 -->
+        <div class="header">
+            <a href="/" class="back-button">
+                <div class="back-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"/>
+                    </svg>
+                </div>
+            </a>
+            <h1 class="page-title">Information Center</h1>
+        </div>
+
+        <!-- 聊天内容区域 -->
+        <div class="chat-container">
+            <!-- 第一个对话气泡 -->
+            <div class="chat-bubble">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box info-options">
+                    <div class="info-title">What information do you need?</div>
+                    <div class="info-options-group">
+                        <div class="info-option" data-category="payment">
+                            <div class="circle-icon"></div>
+                            <span>Payment Options</span>
+                        </div>
+                        <div class="info-option" data-category="travel">
+                            <div class="circle-icon"></div>
+                            <span>Travel Recommendations</span>
+                        </div>
+                        <div class="info-option" data-category="announcements">
+                            <div class="circle-icon"></div>
+                            <span>Latest Announcements</span>
+                        </div>
+                        <div class="info-option" data-category="safety">
+                            <div class="circle-icon"></div>
+                            <span>Safety & Reporting</span>
+                        </div>
+                        <div class="info-option" data-category="accessibility">
+                            <div class="circle-icon"></div>
+                            <span>Accessibility Assistance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公告气泡将通过JavaScript动态添加 -->
+        </div>
+
+        <!-- 底部输入框和按钮组 -->
+        <div class="input-container">
+            <div class="input-box">
+                <img src="{{ url_for('static', filename='images/search.png') }}" alt="Search" class="input-icon">
+                <input type="text" id="userInput" placeholder="Send a message to AI assistant">
+                <img src="{{ url_for('static', filename='images/microphone.png') }}" alt="Microphone" class="input-icon">
+                <img src="{{ url_for('static', filename='images/send.png') }}" alt="Send" class="input-icon" onclick="sendMessage()">
+            </div>
+        </div>
+    </div>
+
+    <!-- 将按钮组移到这里，与 input-container 平级 -->
+    <div class="button-scroll-container">
+        <div class="nav-buttons">
+            <a href="/personalized" class="nav-button">
+                <img src="{{ url_for('static', filename='images/personalized-button.png') }}" alt="Personalized">
+            </a>
+            <a href="/helper" class="nav-button">
+                <img src="{{ url_for('static', filename='images/travel-helper-button.png') }}" alt="Travel Helper">
+            </a>
+            <a href="/information" class="nav-button">
+                <img src="{{ url_for('static', filename='images/information-button.png') }}" alt="Information">
+            </a>
+            <a href="/more" class="nav-button">
+                <img src="{{ url_for('static', filename='images/more-button.png') }}" alt="More">
+            </a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/information.js') }}"></script>
+</body>
+</html> 

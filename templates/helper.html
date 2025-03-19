@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Travel Helper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=version) }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons"></div>
+    </div>
+
+    <div class="main-container">
+        <div class="header">
+            <a href="/" class="back-button">
+                <div class="back-icon">
+                    <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 19.438L8.95502 20.5L1.28902 12.71C1.10452 12.5197 1.00134 12.2651 1.00134 12C1.00134 11.7349 1.10452 11.4803 1.28902 11.29L8.95502 3.5L10 4.563L2.68202 12L10 19.438Z" fill="black"/>
+                    </svg>
+                </div>
+            </a>
+            <h1 class="page-title">Travel Helper</h1>
+        </div>
+
+        <div class="chat-container">
+            <!-- 起点输入气泡 -->
+            <div class="chat-bubble">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box">
+                    <div class="destination-input-container">
+                        <div class="input-label">Enter your starting point</div>
+                        <div class="destination-input-wrapper">
+                            <input type="text" id="startPoint" class="destination-input" placeholder="Value">
+                            <button onclick="handleStartPoint()" class="send-button">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 终点输入气泡 (初始隐藏) -->
+            <div id="endPointBubble" class="chat-bubble" style="display: none;">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box">
+                    <div class="destination-input-container">
+                        <div class="input-label">Enter your destination</div>
+                        <div class="destination-input-wrapper">
+                            <input type="text" id="endPoint" class="destination-input" placeholder="Value">
+                            <button onclick="handleEndPoint()" class="send-button">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推荐路线气泡 (初始隐藏) -->
+            <div id="recommendationBubble" class="chat-bubble" style="display: none;">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box">
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-title">Shared Scooter</div>
+                            <div class="route-metrics">
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Cost</div>
+                                        <div class="metric-value">$ --</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Time</div>
+                                        <div class="metric-value">-- min</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Accessibility</div>
+                                        <div class="metric-value">--mi ride</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="route-map">
+                            <!-- 这里需要添加地图图片: map-background.png -->
+                            <div class="location-marker">
+                                <div class="location-icon"><!-- Location icon --></div>
+                                <div class="location-name">UW Husky Union</div>
+                            </div>
+                        </div>
+
+                        <div class="route-footer">
+                            <div class="service-info">
+                                <img src="{{ url_for('static', filename='images/lime-logo.png') }}" alt="Lime" class="service-logo">
+                                <div class="service-details">
+                                    <div class="service-name">Lime</div>
+                                    <div class="service-description">Shared bike booking</div>
+                                </div>
+                            </div>
+                            <button class="route-get-app">Get App</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 自行车路线气泡 -->
+            <div id="bikingBubble" class="chat-bubble" style="display: none;">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box">
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-title">Biking Route</div>
+                            <div class="route-metrics">
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Cost</div>
+                                        <div class="metric-value bike-cost">$ --</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Time</div>
+                                        <div class="metric-value bike-time">-- min</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Accessibility</div>
+                                        <div class="metric-value bike-distance">--mi ride</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="route-map bike-map">
+                            <div class="location-marker">
+                                <div class="location-icon"></div>
+                                <div class="location-name bike-location">Location</div>
+                            </div>
+                        </div>
+
+                        <div class="route-footer">
+                            <div class="service-info">
+                                <img src="{{ url_for('static', filename='images/lime-logo.png') }}" alt="Lime" class="service-logo">
+                                <div class="service-details">
+                                    <div class="service-name">Lime</div>
+                                    <div class="service-description">Shared bike booking</div>
+                                </div>
+                            </div>
+                            <button class="route-get-app">Get App</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公共交通路线气泡 -->
+            <div id="transitBubble" class="chat-bubble" style="display: none;">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box">
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-title">Public Transit</div>
+                            <div class="route-metrics">
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Cost</div>
+                                        <div class="metric-value transit-cost">$ --</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Time</div>
+                                        <div class="metric-value transit-time">-- min</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Accessibility</div>
+                                        <div class="metric-value transit-distance">--mi ride</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="route-map transit-map">
+                            <div class="location-marker">
+                                <div class="location-icon"></div>
+                                <div class="location-name transit-location">Location</div>
+                            </div>
+                        </div>
+
+                        <div class="route-footer">
+                            <div class="service-info">
+                                <img src="{{ url_for('static', filename='images/metro-logo.png') }}" alt="Metro" class="service-logo">
+                                <div class="service-details">
+                                    <div class="service-name">King County Metro</div>
+                                    <div class="service-description">Public Transportation</div>
+                                </div>
+                            </div>
+                            <button class="route-get-app">Get App</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 驾车路线气泡 -->
+            <div id="drivingBubble" class="chat-bubble" style="display: none;">
+                <img class="avatar" src="{{ url_for('static', filename='images/assistant-avatar.png') }}" alt="Assistant">
+                <div class="dialog-box">
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-title">Driving Route</div>
+                            <div class="route-metrics">
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Cost</div>
+                                        <div class="metric-value driving-cost">$ --</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Time</div>
+                                        <div class="metric-value driving-time">-- min</div>
+                                    </div>
+                                </div>
+                                <div class="metric-box">
+                                    <div class="metric-content">
+                                        <div class="metric-label">Accessibility</div>
+                                        <div class="metric-value driving-distance">--mi ride</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="route-map driving-map">
+                            <div class="location-marker">
+                                <div class="location-icon"></div>
+                                <div class="location-name driving-location">Location</div>
+                            </div>
+                        </div>
+
+                        <div class="route-footer">
+                            <div class="service-info">
+                                <img src="{{ url_for('static', filename='images/uber-logo.png') }}" alt="Uber" class="service-logo">
+                                <div class="service-details">
+                                    <div class="service-name">Uber</div>
+                                    <div class="service-description">Ride sharing service</div>
+                                </div>
+                            </div>
+                            <button class="route-get-app">Get App</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部输入框 -->
+            <div class="button-scroll-container">
+                <div class="nav-buttons">
+                    <a href="/personalized" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/personalized-button.png') }}" alt="Personalized">
+                        <span>Personalized</span>
+                    </a>
+                    <a href="/helper" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/travel-helper-button.png') }}" alt="Travel Helper">
+                        <span>Travel Helper</span>
+                    </a>
+                    <a href="/information" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/information-button.png') }}" alt="Information">
+                        <span>Information</span>
+                    </a>
+                    <a href="/more" class="nav-button">
+                        <img src="{{ url_for('static', filename='images/more-button.png') }}" alt="More">
+                        <span>More...</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box">
+                    <img src="{{ url_for('static', filename='images/search.png') }}" alt="Search" class="input-icon">
+                    <input type="text" id="userInput" placeholder="Message to AI bot">
+                    <img src="{{ url_for('static', filename='images/microphone.png') }}" alt="Microphone" class="input-icon">
+                    <img src="{{ url_for('static', filename='images/send.png') }}" alt="Send" class="input-icon" onclick="sendMessage()">
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <img src="{{ url_for('static', filename='images/explore.png') }}" alt="Explore">
+                <span>Explore</span>
+            </div>
+            <div class="nav-item">
+                <img src="{{ url_for('static', filename='images/chat.png') }}" alt="Chat">
+            </div>
+            <div class="nav-item">
+                <img src="{{ url_for('static', filename='images/account.png') }}" alt="Account">
+                <span>Account</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/helper.js') }}"></script>
+</body>
+</html> 

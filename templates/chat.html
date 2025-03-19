@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1 class="greeting">Good Morning!</h1>
+            <img class="weather-icon" src="{{ url_for('static', filename='images/weather.png') }}" alt="Weather">
+        </div>
+
+        <div class="search-bar">
+            <div class="date">
+                <span>18</span>
+                <span class="divider"></span>
+                <span>03</span>
+            </div>
+            <div class="search-text">Prioritize today's trip factors</div>
+            <div class="sort-button" onclick="toggleRankingModal()">
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2H22" stroke="#FBFCFF" stroke-width="3" stroke-linecap="square"/>
+                    <path d="M6.82764 13.7241H17.1725" stroke="#FBFCFF" stroke-linecap="round"/>
+                    <path d="M6.82764 17.8621H17.1725" stroke="#FBFCFF" stroke-linecap="round"/>
+                    <path d="M6.82764 22H17.1725" stroke="#FBFCFF" stroke-linecap="round"/>
+                    <path d="M12.6984 5.09469C12.5031 4.89943 12.1866 4.89943 11.9913 5.09469L8.80931 8.27667C8.61405 8.47193 8.61405 8.78851 8.80931 8.98378C9.00458 9.17904 9.32116 9.17904 9.51642 8.98378L12.3448 6.15535L15.1733 8.98378C15.3685 9.17904 15.6851 9.17904 15.8804 8.98378C16.0756 8.78851 16.0756 8.47193 15.8804 8.27667L12.6984 5.09469ZM11.8448 5.44824L11.8448 10.9655L12.8448 10.9655L12.8448 5.44824L11.8448 5.44824Z" fill="#FBFCFF"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="cards-section">
+            <h2 class="section-title">How can I help you today?</h2>
+            <div class="cards-grid">
+                <a href="{{ url_for('personalized') }}" class="card">
+                    <img src="{{ url_for('static', filename='images/personalized.png') }}" alt="Personalized">
+                    <div class="card-content">
+                        <h3>Personalized tools</h3>
+                        <p>Get personalized travel app recommendations tailored to your trip!</p>
+                    </div>
+                </a>
+
+                <a href="{{ url_for('helper') }}" class="card">
+                    <img src="{{ url_for('static', filename='images/helper.png') }}" alt="Helper">
+                    <div class="card-content">
+                        <h3>Travel helper</h3>
+                        <p>Compare travel options to find the best choice for your trip.</p>
+                    </div>
+                </a>
+
+                <a href="{{ url_for('info') }}" class="card">
+                    <img src="{{ url_for('static', filename='images/info.png') }}" alt="Info">
+                    <div class="card-content">
+                        <h3>Information Board</h3>
+                        <p>Local alerts, closures, weather and other information that could impact your trip.</p>
+                    </div>
+                </a>
+
+                <a href="{{ url_for('more') }}" class="card">
+                    <img src="{{ url_for('static', filename='images/more.png') }}" alt="More">
+                    <div class="card-content">
+                        <h3>More...</h3>
+                        <p>More information about travel by King County Metro.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <img src="{{ url_for('static', filename='images/explore.png') }}" alt="Explore">
+                <span>Explore</span>
+            </div>
+            <a href="{{ url_for('personalized') }}" class="nav-item">
+                <img src="{{ url_for('static', filename='images/chat.png') }}" alt="Chat">
+            </a>
+            <div class="nav-item">
+                <img src="{{ url_for('static', filename='images/account.png') }}" alt="Account">
+                <span>Account</span>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="rankingModal">
+            <div class="modal-content">
+                <div class="modal-title">Care Factors Ranking</div>
+                <div class="modal-subtitle">Drag to change prioritize</div>
+                <div class="ranking-items">
+                    <div class="ranking-item">
+                        <span class="ranking-item-text">Safety</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="ranking-item-text">Cost</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="ranking-item-text">Less Transfer</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="ranking-item-text">Time</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="ranking-item-text">Less Walking</span>
+                    </div>
+                </div>
+                <button class="confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加 JavaScript 引用 -->
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

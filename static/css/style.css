@@ -1,0 +1,1207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    max-width: 402px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8E6FF 100%);
+    background-blend-mode: normal;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-container {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.content {
+    padding: 24px;
+    min-height: calc(100vh - 80px);
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 354px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 100px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.10) inset;
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-item:nth-child(2) img {
+    width: 42px;
+    height: 42px;
+}
+
+.nav-item span {
+    color: #757575;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 19.60px;
+}
+
+.bottom-indicator {
+    width: 134px;
+    height: 5px;
+    position: fixed;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    border-radius: 100px;
+    z-index: 5;
+}
+
+/* 头部样式 */
+.header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.back-button {
+    text-decoration: none;
+}
+
+.back-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 9999px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-title {
+    color: black;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+}
+
+/* 搜索栏样式 */
+.search-bar {
+    margin: 0 24px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.60);
+    border-radius: 32px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #5B6B86;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.date .divider {
+    width: 2px;
+    height: 30px;
+    background: #5B6B86;
+}
+
+.search-text {
+    margin-left: 16px;
+    color: #384252;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+/* 卡片区域样式 */
+.cards-section {
+    padding: 36px 24px;
+}
+
+.section-title {
+    color: #384252;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 12px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 24px 12px;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 232px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card img {
+    width: 56px;
+    height: 56px;
+}
+
+.card-content h3 {
+    color: #06102D;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: black;
+    opacity: 0.7;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+/* 排序按钮样式 */
+.sort-button {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(180deg, #D485CA 0%, #C253EB 100%);
+    border-radius: 100px;
+    border: 1px solid #BEBEBE;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.sort-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* 更新天气图标样式 */
+.weather-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+/* 工具推荐卡片样式 */
+.description {
+    color: #384252;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 24px;
+    margin-bottom: 24px;
+}
+
+/* 保留基本的对话框样式 */
+.dialog-box {
+    background: white;
+    border-radius: 20px;
+    padding: 12px;
+    width: 284px; /* 统一宽度 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: none; /* 移除最大高度限制 */
+    overflow: visible; /* 允许内容溢出 */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+}
+
+.chat-bubble {
+    display: flex;
+    margin-bottom: 16px;
+    align-items: flex-start;
+    max-height: none; /* 移除最大高度限制 */
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover; /* 防止图片拉伸 */
+    flex-shrink: 0;
+}
+
+/* 用户消息样式 */
+.chat-bubble.user {
+    justify-content: flex-end;
+    padding-left: 20%; /* 让用户消息不要太靠左 */
+}
+
+.chat-bubble.user .dialog-box {
+    background: #CEECFF;
+}
+
+/* 确保对话框内容正确换行 */
+.dialog-title, .user-message, .ai-message {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column; /* 改为垂直排列 */
+    gap: 12px; /* 选项之间的间距 */
+    margin-top: 16px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.option:hover {
+    background: #EAEAEA;
+}
+
+.option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.option span {
+    font-size: 14px;
+    color: #212121;
+}
+
+/* 信息选项样式 */
+.info-options {
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 20px;
+    border-top-left-radius: 4px;
+    padding: 16px 24px;
+}
+
+.info-title {
+    color: #212121;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    margin-bottom: 10px;
+}
+
+.info-options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.circle-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #757575;
+    background: white;
+}
+
+.info-option span {
+    color: #1E1E1E;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 22.40px;
+}
+
+/* 公告样式 */
+.announcement-box {
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 20px;
+    border-top-left-radius: 4px;
+    padding: 16px 24px;
+}
+
+.announcement-header {
+    display: flex;
+    gap: 8px;
+}
+
+.announcement-content {
+    flex: 1;
+}
+
+.announcement-title {
+    margin-bottom: 4px;
+}
+
+.main-title {
+    color: black;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.sub-title {
+    color: black;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.10px;
+    margin-left: 8px;
+}
+
+.announcement-description {
+    color: black;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-bottom: 4px;
+}
+
+.announcement-meta {
+    color: #818181;
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.40px;
+}
+
+.announcement-icon {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 8px;
+}
+
+.announcement-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 卡片横向滚动容器 */
+.cards-scroll {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0;
+}
+
+.cards-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* 卡片基本样式 */
+.card-wrapper {
+    position: relative;
+    flex: 0 0 270px;
+    height: 120px;
+    background: white;
+    border-radius: 9px;
+    margin: 0;
+    padding: 0;
+}
+
+.card-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+    scroll-snap-align: start;
+}
+
+/* 卡片按钮样式 */
+.get-app-btn {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 9px 18px;
+    background: linear-gradient(180deg, #9965E6 0%, #F953E0 100%);
+    border-radius: 6px;
+    border: none;
+    color: #F5F5F5;
+    font-size: 10.5px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 10.5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* 分数显示样式 */
+.tool-score {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* 推荐类别容器和标题 */
+.recommendation-category {
+    margin-bottom: 24px;
+    padding: 0;
+}
+
+.category-title {
+    color: #9965E6;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.10px;
+    word-wrap: break-word;
+    text-align: left;
+    margin-bottom: 12px;
+    padding: 0;
+    margin-left: 4px;
+}
+
+#recommendation {
+    margin-top: 24px;
+}
+
+/* 修改按钮组样式 */
+.button-scroll-container {
+    position: fixed;
+    bottom: 84px;    /* 确保这个值与其他页面一致 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-width: 265px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    z-index: 999;
+}
+
+/* 为 more 页面特别设置按钮组位置 */
+.more-page .button-scroll-container {
+    bottom: 81px;    /* 降低 3px */
+}
+
+/* 确保输入框容器在最上层 */
+.input-container {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 354px;
+    z-index: 1000;
+    background: transparent;
+}
+
+.input-box {
+    height: 48px;
+    background: white;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    gap: 8px;
+}
+
+.input-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #1D1B20;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.input-box input::placeholder {
+    color: transparent;
+}
+
+.input-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* 为 search 图标单独设置大小 */
+.input-icon[alt="Search"] {
+    width: 72px;
+    height: 72px;
+}
+
+/* 为 send 图标单独设置大小 */
+.input-icon[alt="Send"] {
+    width: 30px;
+    height: 30px;
+}
+
+/* 弹窗背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 弹窗容器 */
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 弹窗标题 */
+.modal-title {
+    color: #1F1F1F;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.modal-subtitle {
+    color: #1F1F1F;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+/* 排序项容器 */
+.ranking-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+    align-items: center;
+}
+
+/* 单个排序项 */
+.ranking-item {
+    width: 185px;
+    height: 48px;
+    padding: 12px 8px;
+    border-radius: 8px;
+    border: 1px solid #C7C7C7;
+    display: flex;
+    align-items: center;
+}
+
+/* 确认按钮 */
+.confirm-btn {
+    width: 240px;
+    padding: 12px 24px;
+    background: linear-gradient(180deg, #9965E6 0%, #F953E0 100%);
+    border-radius: 8px;
+    border: none;
+    color: #F5F5F5;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 目的地输入容器样式 */
+.destination-input-container {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: flex;
+    width: 100%;
+}
+
+.input-label {
+    align-self: stretch;
+    color: #1E1E1E;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    word-wrap: break-word;
+}
+
+.destination-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.destination-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #E0E4EA;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    width: calc(100% - 80px); /* 减去按钮宽度和间距 */
+}
+
+.destination-input:focus {
+    border-color: #9965E6;
+}
+
+.button-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-buttons {
+    display: inline-flex;
+    gap: 8px;
+    padding: 0;
+}
+
+.nav-button {
+    text-decoration: none;
+    height: 27px;
+}
+
+.nav-button img {
+    height: 100%;
+    width: auto;
+}
+
+.nav-button span {
+    display: none;
+}
+
+/* AI 消息样式 */
+.ai-message {
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 用户消息样式 */
+.user-message {
+    color: #1D1B20;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 加载状态样式 */
+.loading {
+    color: #666;
+    font-style: italic;
+}
+
+/* 聊天气泡样式调整 */
+.chat-bubble.user {
+    flex-direction: row-reverse;
+}
+
+.chat-bubble.user .dialog-box {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 4px;
+    background: rgba(153, 101, 230, 0.1);
+}
+
+/* 修改类别标题样式 */
+.category-title {
+    color: #9965E6;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.10px;
+    word-wrap: break-word;
+    text-align: left;     /* 改为左对齐 */
+    margin-bottom: 12px;
+    padding: 0;
+    margin-left: 4px;     /* 添加一点左边距，与卡片对齐 */
+}
+
+/* 调整推荐类别容器 */
+.recommendation-category {
+    margin-bottom: 24px;
+    padding: 0;
+}
+
+/* 调整卡片滚动容器 */
+.cards-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0;
+    scrollbar-width: none;
+}
+
+.cards-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.get-app-btn {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    background: #9965E6;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;  /* 使用统一的圆角 */
+    font-size: 14px;
+    font-weight: 500;
+    margin: 8px;  /* 添加边距使按钮不贴边 */
+}
+
+.tool-score {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* 修改路线卡片样式 */
+.route-card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #C8CED9;
+    display: flex;
+    flex-direction: column;
+    max-height: none; /* 移除最大高度限制 */
+}
+
+.route-header {
+    padding: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.route-map {
+    position: relative;
+    width: 100%;
+    height: 200px; /* 进一步减小高度 */
+    background-color: #f0f0f0;
+    border-radius: 0; /* 移除圆角，确保地图填满区域 */
+    margin: 0; /* 移除边距 */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 添加渐变遮罩 */
+.route-map::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* 减小渐变高度 */
+    background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.route-map::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* 减小渐变高度 */
+    background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.location-marker {
+    position: absolute;
+    left: 8px;
+    bottom: 48px; /* 调整位置，避免被底部渐变遮挡 */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8); /* 添加半透明背景 */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.route-footer {
+    width: 100%;
+    padding: 12px 8px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.service-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-logo {
+    width: 36px;
+    height: 36px; /* 修改为正方形 */
+    border-radius: 8px;
+    object-fit: cover; /* 确保图片正确填充 */
+}
+
+/* 调整指标框的样式 */
+.route-metrics {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* 减小间距 */
+    z-index: 2;
+}
+
+.metric-box {
+    width: 90px; /* 稍微增加宽度 */
+    padding: 2px 6px; /* 减小内边距 */
+    background: #F1E9FB;
+    border-radius: 6px; /* 稍微减小圆角 */
+    border: 1px solid #E0E4EA;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* 确保对话框内的路线卡片正确显示 */
+.dialog-box .route-card {
+    margin: 0;
+    width: 100%;
+}
+
+/* 恢复发送按钮样式 */
+.send-button {
+    padding: 8px 12px; /* 减小内边距 */
+    background: #9965E6;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    min-width: 60px;
+}
+
+.send-button:hover {
+    background: #8A4DE0;
+}
+
+/* 修改 Get App 按钮样式 */
+.route-card .get-app-btn {
+    padding: 3px 8px;
+    background: transparent;
+    border-radius: 6px;
+    border: 1px solid #F454E1;
+    color: #06102D;
+    font-size: 12px;
+    font-family: 'SF Pro';
+    font-weight: 400;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.route-card .get-app-btn:hover {
+    background: #F8F9FF;
+}
+
+/* 恢复其他文字样式 */
+.service-name {
+    color: black;
+    font-size: 14px; /* 减小字体 */
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.15px;
+}
+
+.service-description {
+    color: #49454F;
+    font-size: 10px; /* 减小字体 */
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+}
+
+/* 调整路线标题大小 */
+.route-title {
+    color: black;
+    font-size: 14px; /* 减小字体 */
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.15px;
+}
+
+.metric-label {
+    color: #757575;
+    font-size: 10px; /* 减小字体 */
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.metric-value {
+    color: #1E1E1E;
+    font-size: 12px; /* 减小字体 */
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/* 调整位置标记文字大小 */
+.location-name {
+    color: #5B6B86;
+    font-size: 10px; /* 减小字体 */
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+}
+
+/* Travel Helper 页面的路线卡片样式 */
+.route-card .route-footer {
+    width: 100%;
+    padding: 12px 8px;
+    background: white;
+    display: flex;
+    justify-content: space-between; /* 使用 space-between 布局 */
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Travel Helper 页面专用的 Get App 按钮样式 */
+.route-card .route-get-app {
+    padding: 4px 10px;
+    background: transparent;
+    border-radius: 6px;
+    border: 1px solid #F454E1;
+    color: #06102D;
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: auto; /* 确保按钮靠右 */
+}
+
+/* 服务信息容器样式 */
+.route-card .service-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1; /* 让服务信息占据剩余空间 */
+    min-width: 0; /* 防止内容溢出 */
+}
+
+/* 中心图标容器 */
+.capability-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+#capability-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* 功能标题 */
+.capabilities-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #6E7C8F;
+    margin-bottom: 30px;
+}
+
+/* 功能按钮容器 */
+.capability-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+/* 功能按钮 */
+.capability-button {
+    background-color: #F5F7FA;
+    border: 1px solid #E0E4EA;
+    border-radius: 16px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #6E7C8F;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.capability-button:hover {
+    background-color: #EFF2F6;
+    border-color: #C8CED9;
+}
+
+.capability-button:active {
+    background-color: #E5E9F0;
+    transform: scale(0.98);
+}
+
+/* 提示文本 */
+.capability-hint {
+    text-align: center;
+    font-size: 16px;
+    color: #8A94A6;
+    margin: 20px 0 30px;
+    padding: 0 30px;
+}
+
+/* 公告链接样式 */
+.announcement-link {
+    margin-top: 8px;
+}
+
+.announcement-link a {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #559f3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.announcement-link a:hover {
+    background-color: #3e7d2a;
+}
+
+/* 工具提示样式 */
+.tool-note {
+    position: absolute;
+    bottom: 30px;
+    left: 8px;
+    right: 8px;
+    background-color: rgba(255, 255, 0, 0.2);
+    color: #333;
+    font-size: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* 无推荐内容样式 */
+.no-recommendations {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+}

@@ -1,0 +1,19 @@
+,Tool,Introduction,Cost,Time,Safety,less transfer,less walking,Accessibility&Inclusivity,type of service,flexibility rating,sigle or group,Tag1,Tag2,Tag3,,,
+1,Google Maps,"A comprehensive navigation app providing real-time GPS directions, public transit information, and route planning across multiple modes of transport.",98,82,88,76,58,81,Trip Planning,High,Both,navigation,real-time,multi-modal,,,
+2,Apple Maps,"A user-friendly navigation tool offering turn-by-turn directions, transit schedules, and detailed map visuals for iOS users.",90,77,88,79,61,77,Trip Planning,High,Both,navigation,iOS,transit,,,
+3,Citymapper,"A city-focused transit app that integrates various transport modes, including bus, train, bike, and walking, tailored for urban travelers.",88,91,96,88,78,69,Trip Planning,High,Both,urban,multi-modal,transit,,,
+4,Moovit,"A public transit app providing live updates, multimodal trip planning, and real-time alerts to simplify daily commuting.",91,86,93,92,81,77,Trip Planning,High,Both,real-time,transit,commute,First Visit,,
+5,OneBusAway,A specialized app delivering real-time bus arrival information and transit schedules for specific regions.,100,91,88,80,58,92,Real-time Information,Medium,Both,bus,real-time,schedule,First Visit,Flexible Time,Long-Distance
+6,Contactless,"A digital payment system enabling seamless transit fare payments with a tap, improving convenience for commuters.",76,59,71,58,62,63,Real-time Information,Medium,Single,payment,contactless,transit,First Visit,,
+7,Transit App,"A public transit app offering real-time arrival updates, trip planning, and notifications across multiple cities.",96,91,93,85,80,78,Trip Planning,High,Both,real-time,planning,notifications,,,
+8,TrafficView,A tool focused on providing live traffic conditions and road status updates for driving commuters.,69,72,66,50,53,50,Real-time Information,Medium,Single,traffic,real-time,driving,,,
+9,WSDOT App,"Washington State Department of Transportation’s app delivering traffic updates, ferry schedules, and travel alerts within the state.",73,71,65,73,51,72,Real-time Information,Medium,Both,traffic,ferry,alerts,First Visit,,
+10,Lyft,"A ride-hailing app offering on-demand car rides, bikes, and scooters, tailored to individual transportation needs.",40,99,52,96,97,48,Book a Ride,High,Both,ride-hailing,on-demand,flexible,Strict schedule,Long-Distance,
+11,Lime,A micromobility service providing electric scooters and bikes for short-distance urban travel.,52,92,46,99,98,41,Book a Ride,High,Single,scooter,bike,short-distance,Flexible Time,Short-Distance,
+12,ParkMobile,"A parking app allowing users to find, reserve, and pay for parking spots conveniently via their smartphones.",55,57,71,51,49,43,Book a Ride,Medium,Both,parking,reservation,payment,Round-Trip,Long-Distance,
+13,Sound Transit,"A regional transit app offering schedules, real-time updates, and trip planning for trains and buses in the Puget Sound area.",92,91,87,86,84,82,Trip Planning,High,Both,transit,train,bus,,,
+14,FindARide ,"A platform connecting users with community transportation services for seniors, disabled individuals, and other underserved populations.",72,62,71,49,54,99,Trip Planning,Medium,Both,community,seniors,accessibility,,,
+15,Puget Sound,A regional transit service in the Puget Sound area providing ferry and bus transport.,94,66,91,88,76,71,Trip Planning,Medium,Both,regional,ferry,transit,Flexible Time,,
+16,Waze,A navigation app offering live traffic updates and driving routes.,77,10,5,5,5,38,Trip Planning,Medium,Single,traffic,driving,alerts,Flexible Time,,
+17,Zipcar,A car-sharing service allowing users to rent vehicles by the hour or day.,49,91,74,65,71,42,Book a Ride,Medium,Single,car-sharing,rental,flexible,Visit,One Way,Long-Distance
+18,Uber,"A ride-hailing service offering private, shared, and luxury rides on demand.",29,92,50,90,88,50,Book a Ride,High,Both,ride-hailing,private,shared,one way,Strict schedule,Long-Distance
