@@ -51,7 +51,7 @@ Metro Concierge is an intelligent transportation assistant that helps users find
 1. Open the file `static/js/helper.js`
 2. Locate line 1, which contains:
    ```javascript
-   const GOOGLE_MAPS_API_KEY = 'AIzaSyC5FDWfr1gBDQxNTmPWKuKKs17Zjyc0quM';
+   const GOOGLE_MAPS_API_KEY = '???';
    ```
 3. Replace the API key with your own Google Maps API key
 
